@@ -1,0 +1,11 @@
+.git
+.github
+build
+*.o
+*.bin
+*.iso
+*.img
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+SECURITY.md

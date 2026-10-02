@@ -1,0 +1,25 @@
+name: Build TinyOS
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build toolchain image
+        run: docker build --tag tinyos-toolchain .
+
+      - name: Build ISO
+        run: docker run --rm -v "$PWD:/workspace" tinyos-toolchain
+
+      - name: Check Multiboot header
+        run: docker run --rm -v "$PWD:/workspace" tinyos-toolchain check
+
+      - name: Verify artifacts
+        run: test -s build/kernel.bin && test -s build/tinyos.iso

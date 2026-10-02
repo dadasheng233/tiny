@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.ps1 text working-tree-encoding=UTF-8
+*.md text working-tree-encoding=UTF-8
+*.c text eol=lf
+*.s text eol=lf
+*.ld text eol=lf
+*.yml text eol=lf

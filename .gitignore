@@ -1,0 +1,7 @@
+build/
+*.img
+*.iso
+*.bin
+*.o
+*.pyc
+__pycache__/
